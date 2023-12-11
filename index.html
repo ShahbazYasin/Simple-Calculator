@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <!-- <style>
+        input
+        {
+           background-color: black;
+           color: white; 
+           outline: none;
+           border: none;
+           text-align: right;
+           
+        }
+        button
+        {
+            width: 35px;
+            padding: 0px;
+            background-color: black;
+            color: white;
+            border: none;
+            
+        }
+        .btn
+        {
+            /* background-color: black; */
+        }
+    </style> -->
+</head>
+<body>
+    <div>
+    <input type="number" id="inputValue1" placeholder="0"> <br>
+    <input type="number" id="inputValue2" placeholder="0"> <br>
+    
+    <div class="btn">
+        <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">x</button>
+    <button onclick="calculate('/')">/</button> <br>
+    </div>
+    
+    <input type="number" id="result" placeholder="0"> <br>
+</div>
+<script>
+    function calculate(operator){
+        let input1 = parseInt(document.getElementById('inputValue1').value);
+        let input2 = parseInt(document.getElementById('inputValue2').value);
+        let resultElement = document.getElementById('result');
+
+        switch (operator) {
+            case '+':
+                resultElement.value = parseInt(input1 + input2);
+                break;
+            case '-':
+                resultElement.value = input1 - input2;
+                break;
+            case '*':
+                resultElement.value = input1 * input2;
+                break;
+                case '/':
+                    if (input2 !== 0) {
+                        resultElement.value = input1 / input2;
+                    } else {
+                        alert("Cannot divide by zero!");
+                    }
+                    break;
+                default:
+                    alert("Invalid operator");
+            
+        }
+    }
+</script>
+
+</body>
+</html>
