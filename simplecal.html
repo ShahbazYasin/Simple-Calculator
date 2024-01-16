@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        button{
+            font-weight: bold;
+            font-size: 24px;
+            width: 35px;
+            background-color: transparent;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            padding: 0px;
+            margin: 0px;
+            
+
+
+        }
+      
+    </style>
+</head>
+<body style="background-color: aqua;">
+    <form>
+        <input type="number" id="input1">
+        <input type="number" id="input2"><br><br>
+        <button onclick="plus(event)">+</button>
+        <button onclick="minus(event)">-</button>
+        <button onclick="multiply(event)">x</button>
+        <button onclick="divide(event)">÷</button><br><br>
+        <input type="number" id="inputReslut">
+    </form>
+
+    <script>
+        function plus(e){
+            event.preventDefault();
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var inputPlus = parseInt(input1) + parseInt(input2);
+            document.getElementById("inputReslut").value = inputPlus;
+        }
+
+        function minus(e){
+            event.preventDefault();
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var inputPlus = parseInt(input1) - parseInt(input2);
+            document.getElementById("inputReslut").value = inputPlus;
+        }
+
+        function multiply(e){
+            event.preventDefault();
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var inputPlus = input1 * input2;
+            document.getElementById("inputReslut").value = inputPlus;
+        }
+
+        function divide(e){
+            event.preventDefault();
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var inputPlus = parseInt("input1") / parseInt("input2");
+            document.getElementById("inputReslut").value = inputPlus;
+
+            if(input2 === "0"){
+                alert("Cannot Divide By Zero!");
+            }
+
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>
